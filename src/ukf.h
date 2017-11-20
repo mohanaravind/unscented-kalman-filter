@@ -67,6 +67,14 @@ public:
   ///* Sigma point spreading parameter
   double lambda_;
 
+  ///* Number of sigma points
+  int n_sig_;
+
+  ///* Laser measurement noise
+  MatrixXd R_LASER_;
+
+  ///* Radar measurement noise
+  MatrixXd R_RADAR_;
 
   /**
    * Constructor
@@ -101,7 +109,7 @@ public:
    * Updates the state and the state covariance matrix using a radar measurement
    * @param meas_package The measurement at k+1
    */
-  void UpdateRadar(MeasurementPackage meas_package);
+  void UpdateRadar(MeasurementPackage meas_package);  
 };
 
 #endif /* UKF_H */
